@@ -1,0 +1,6 @@
+pandas==1.4.0
+numpy==1.22.1
+Unidecode==1.3.2
+
+
+
