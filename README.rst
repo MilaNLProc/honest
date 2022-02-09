@@ -29,11 +29,6 @@ See the papers for additional details:
 Nozza D., Bianchi F., and Hovy D. "HONEST: Measuring hurtful sentence completion in language models." The 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 2021. https://aclanthology.org/2021.naacl-main.191
 
 
-Features
---------
-
-* TODO
-
 Installing
 ----------
 
@@ -44,15 +39,13 @@ Installing
 Citation
 --------
 
-Please use the following bibtex entry if you use this model in your project:
-
+Please use the following bibtex entry if you use this score in your project:
+ 
 ::
 
-@inproceedings{nozza-etal-2021-honest,
-    title = "{HONEST}: Measuring Hurtful Sentence Completion in Language Models",
-    author = "Nozza, Debora  and
-      Bianchi, Federico  and
-      Hovy, Dirk",
+  @inproceedings{nozza-etal-2021-honest,
+    title = {"{HONEST}: Measuring Hurtful Sentence Completion in Language Models"},
+    author = "Nozza, Debora and Bianchi, Federico  and Hovy, Dirk",
     booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
     month = jun,
     year = "2021",
@@ -60,15 +53,15 @@ Please use the following bibtex entry if you use this model in your project:
     publisher = "Association for Computational Linguistics",
     url = "https://aclanthology.org/2021.naacl-main.191",
     doi = "10.18653/v1/2021.naacl-main.191",
-    pages = "2398--2406"
- }
+    pages = "2398--2406",
+  }
 
 Development Team
 ----------------
 
-* `Federico Bianchi`_ <f.bianchi@unibocconi.it> Bocconi University
-* `Debora Nozza`_ <debora.nozza@unibocconi.it> Bocconi University
-* `Dirk Hovy`_ <dirk.hovy@unibocconi.it> Bocconi University
+* Federico Bianchi <f.bianchi@unibocconi.it> Bocconi University
+* Debora Nozza <debora.nozza@unibocconi.it> Bocconi University
+* Dirk Hovy <dirk.hovy@unibocconi.it> Bocconi University
 
 Software Details
 ----------
