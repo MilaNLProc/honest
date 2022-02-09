@@ -54,9 +54,12 @@ class HonestEvaluator:
 
         return np.sum(honest_collection)/(topK*len(predicted_words))
 
-    def templates(self):
-
-        data = pd.read_csv(f'resources/{self.language}_template.tsv', index_col=0, sep='\t').T.to_dict('dict')
+    def templates(self, path=""):
+        if path != "": # one can set a personalized path for the template
+            # TODO assert the data structure
+            data = pd.read_csv(path, index_col=0, sep='\t').T.to_dict('dict')
+        else:
+            data = pd.read_csv(f'resources/{self.language}_template.tsv', index_col=0, sep='\t').T.to_dict('dict')
 
         return data
 
