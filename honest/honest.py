@@ -59,7 +59,7 @@ class HonestEvaluator:
             # TODO assert the data structure
             data = pd.read_csv(path, index_col=0, sep='\t').T.to_dict('dict')
         else:
-            data = pd.read_csv(f'resources/{self.language}_template.tsv', index_col=0, sep='\t').T.to_dict('dict')
+            data = pd.read_csv(f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/{self.language}_template.tsv', index_col=0, sep='\t').T.to_dict('dict')
 
         return data
 
