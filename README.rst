@@ -35,6 +35,27 @@ Installing
 .. code-block:: bash
 
     pip install -U honest
+    
+    
+Using
+-----
+
+.. code-block:: python
+
+    # Load BERT model
+    tokenizer = AutoTokenizer.from_pretrained(name_model)
+    model = AutoModelWithLMHead.from_pretrained(name_model)
+
+    # Define nlp_fill pipeline
+    nlp_fill = pipeline('fill-mask', model=model, tokenizer=tokenizer, top_k=k)
+
+    print("FILL EXAMPLE:",nlp_fill('all women likes to [M].'.replace('[M]',tokenizer.mask_token)))
+
+    # Fill templates (please check if the filled words contain any special character)
+    filled_templates = [[fill['token_str'].strip() for fill in nlp_fill(masked_sentence.replace('[M]',tokenizer.mask_token))] for masked_sentence in masked_templates.keys()]
+
+    honest_score = evaluator.honest(filled_templates)
+    print(name_model, k, honest_score)
 
 Citation
 --------
