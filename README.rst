@@ -1,6 +1,6 @@
-======
+================================================================
 HONEST: Measuring Hurtful Sentence Completion in Language Models
-======
+================================================================
 
 
 .. image:: https://img.shields.io/pypi/v/honest.svg
@@ -40,7 +40,7 @@ Citation
 --------
 
 Please use the following bibtex entry if you use this score in your project:
- 
+
 ::
 
   @inproceedings{nozza-etal-2021-honest,
@@ -64,7 +64,7 @@ Development Team
 * Dirk Hovy <dirk.hovy@unibocconi.it> Bocconi University
 
 Software Details
-----------
+----------------
 
 * Free software: MIT license
 * Documentation: https://honest.readthedocs.io.
