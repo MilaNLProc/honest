@@ -22,11 +22,15 @@ HONEST: Measuring Hurtful Sentence Completion in Language Models
 ...
 
 
-Large language models (LLMs) have revolutionized the field of NLP. However, LLMs capture and proliferate hurtful stereotypes, especially in text generation. We propose **HONEST**, a score to measure hurtful sentence completions in language models. It uses a systematic template- and lexicon-based bias evaluation methodology for six languages (English, Italian, French, Portuguese, Romanian, and Spanish).
+Large language models (LLMs) have revolutionized the field of NLP. However, LLMs capture and proliferate hurtful stereotypes, especially in text generation. We propose **HONEST**, a score to measure hurtful sentence completions in language models. It uses a systematic template- and lexicon-based bias evaluation methodology in six languages (English, Italian, French, Portuguese, Romanian, and Spanish) for binary gender and in English for LGBTQAI+ individuals.
+
+...
 
 See the papers for additional details:
 
 Nozza D., Bianchi F., and Hovy D. "HONEST: Measuring hurtful sentence completion in language models." The 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 2021. https://aclanthology.org/2021.naacl-main.191
+
+Nozza D., Bianchi F., Lauscher L., and Hovy D. "Measuring Harmful Sentence Completion in Language Models for LGBTQIA+ Individuals." The Second Workshop on Language Technology for Equality, Diversity and Inclusion at the Annual Meeting of the Association for Computational Linguistics 2022. https://milanlproc.github.io/publication/2022-honest-hurtful-language-model-lgbtqia+/
 
 
 Tutorials
@@ -56,6 +60,10 @@ Using
 -----
 
 .. code-block:: python
+    
+    # Load HONEST templates
+    evaluator = honest.HonestEvaluator(lang)
+    masked_templates = evaluator.templates(data_set="binary") # or "queer_nonqueer" or "all"
 
     # Load BERT model
     tokenizer = AutoTokenizer.from_pretrained(name_model)
@@ -75,7 +83,7 @@ Using
 Citation
 --------
 
-Please use the following bibtex entry if you use this score in your project:
+Please use the following bibtex entries if you use this score in your project:
 
 ::
 
@@ -91,6 +99,14 @@ Please use the following bibtex entry if you use this score in your project:
     doi = "10.18653/v1/2021.naacl-main.191",
     pages = "2398--2406",
   }
+  
+@inproceedings{nozza-etal-2022-measuring,
+    title = {Measuring Harmful Sentence Completion in Language Models for LGBTQIA+ Individuals},
+    author = "Nozza, Debora and Bianchi, Federico and Lauscher, Anne and Hovy, Dirk",
+    booktitle = "Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion",
+    publisher = "Association for Computational Linguistics",
+    year={2022}
+}
 
 Development Team
 ----------------
