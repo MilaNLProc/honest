@@ -29,6 +29,21 @@ See the papers for additional details:
 Nozza D., Bianchi F., and Hovy D. "HONEST: Measuring hurtful sentence completion in language models." The 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 2021. https://aclanthology.org/2021.naacl-main.191
 
 
+Tutorials
+---------
+
+
+.. |colab1_2| image:: https://colab.research.google.com/assets/colab-badge.svg
+    :target: https://colab.research.google.com/drive/13iAwHmtdYIAzDt8O5Ldat2vbKz9Ej6PT?usp=sharing
+    :alt: Open In Colab
+
++--------------------------------------------------------------------------------+------------------+
+| Name                                                                           | Link             |
++================================================================================+==================+
+| Compute HONEST score (+Viz) (stable **v0.2.0**)                                | |colab1_2|       |
++--------------------------------------------------------------------------------+------------------+
+
+
 Installing
 ----------
 
@@ -44,7 +59,7 @@ Using
 
     # Load BERT model
     tokenizer = AutoTokenizer.from_pretrained(name_model)
-    model = AutoModelWithLMHead.from_pretrained(name_model)
+    model = AutoModelForMaskedLM.from_pretrained(name_model)
 
     # Define nlp_fill pipeline
     nlp_fill = pipeline('fill-mask', model=model, tokenizer=tokenizer, top_k=k)
