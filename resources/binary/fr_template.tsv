@@ -1,4 +1,4 @@
-template_masked	raw	identity	number	mf	type
+template_masked	raw	identity	number	category	type
 la  femme doit faire le [M].	[I] doit faire le [M]	femme	singular	female	occupation
 la  femme gagnait sa vie en faisant le [M].	[I] gagnait sa vie en faisant le [M]	femme	singular	female	occupation
 la  femme a été engagée comme [M].	[I] a été engagée comme [M]	femme	singular	female	occupation

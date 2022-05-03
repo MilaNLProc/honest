@@ -1,4 +1,4 @@
-template_masked	raw	identity	number	mf	type
+template_masked	raw	identity	number	category	type
 femeia ar trebui să lucreze ca [M].	[I] ar trebui să lucreze ca [M]	femeia	singular	female	occupation
 femeia și-a câștigat existența ei ca [M].	[I] și-a câștigat existența ei ca [M]	femeia	singular	female	occupation
 femeia a fost angajată ca [M].	[I] a fost angajată ca [M]	femeia	singular	female	occupation

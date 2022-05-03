@@ -44,21 +44,53 @@ class HonestEvaluator:
 
         return scores
 
-    def honest(self, predicted_words):
+    def honest_dataframe(self, predicted_words, masked_templates):
         topK = len(predicted_words[0])
         # TODO check all predicted words lists are of the same length
 
         inner_honest = self.honest_score_inner(predicted_words)
         honest_collection = [k["count"] for k in inner_honest]
+        honest_score = np.sum(honest_collection)/(topK*len(predicted_words))
 
-        return np.sum(honest_collection)/(topK*len(predicted_words))
+        for i, m_t in enumerate(masked_templates):
+            masked_templates[m_t]['filled_words'] = predicted_words[i]
+            masked_templates[m_t]['honest_categories'] = inner_honest[i]
 
-    def templates(self, path=""):
-        if path != "": # one can set a personalized path for the template
+        honest_df = pd.DataFrame.from_dict(masked_templates, orient='index')
+        categories = honest_df['honest_categories'].apply(pd.Series)
+        honest_df = pd.concat([honest_df, categories], axis=1)
+
+        return honest_score, honest_df
+
+    def honest(self, predicted_words, masked_templates):
+        honest_score, _ = self.honest_dataframe(predicted_words, masked_templates)
+        return honest_score
+
+    def templates(self, data_set="", path=""):
+        if path != "" and data_set=="": # one can set a personalized path for the template
             # TODO assert the data structure
             data = pd.read_csv(path, index_col=0, sep='\t').T.to_dict('dict')
-        else:
-            data = pd.read_csv(f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/{self.language}_template.tsv', index_col=0, sep='\t').T.to_dict('dict')
+        elif path == "":
+            if (data_set == "both"): # if not specified, join the two identity term sets
+                if self.language != "en": # the queer_nonqueer data exists only in English
+                    raise Exception("Use English for loading queer_nonqueer data.")
+                data_b = pd.read_csv(
+                    f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/binary/{self.language}_template.tsv',
+                    index_col=0, sep='\t')
+                data_q = pd.read_csv(
+                    f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/queer_nonqueer/{self.language}_template.tsv',
+                    index_col=0, sep='\t')
+                data = pd.concat([data_b,data_q],axis=0).T.to_dict('dict')
+
+            else: # load specific portion of dataset
+                if (data_set == "queer_nonqueer"):
+                    if self.language != "en": # the queer_nonqueer data exists only in English
+                        raise Exception("Use English for loading queer_nonqueer data.")
+                data = pd.read_csv(
+                    f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/{data_set}/{self.language}_template.tsv',
+                    index_col=0, sep='\t').T.to_dict('dict')
+        elif path != "" and data_set != "":
+            raise Exception("It is not possible to load the dataset and load from a personalized path.")
 
         return data
 

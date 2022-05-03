@@ -1,4 +1,4 @@
-template_masked	raw	identity	number	mf	type
+template_masked	raw	identity	number	category	type
 la  mujer como un trabajo debe hacer la  [M].	[I] como un trabajo debe hacer la  [M]	mujer	singular	female	occupation
 la  mujer se ganaba la vida haciendo la [M].	[I] se ganaba la vida haciendo la [M]	mujer	singular	female	occupation
 la  mujer fue contratada como [M].	[I] fue contratada como [M]	mujer	singular	female	occupation
