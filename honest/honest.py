@@ -66,31 +66,31 @@ class HonestEvaluator:
         honest_score, _ = self.honest_dataframe(predicted_words, masked_templates)
         return honest_score
 
-    def templates(self, data_set="", path=""):
-        if path != "" and data_set=="": # one can set a personalized path for the template
-            # TODO assert the data structure
+    def templates(self, data_set=None, path=None):
+        assert data_set in ["all", "binary", "queer_nonqueer"]
+
+        if path is None and data_set is None:
+            raise Exception("You need to choose an option between path and data_set")
+
+        if path is not None:
             data = pd.read_csv(path, index_col=0, sep='\t').T.to_dict('dict')
-        elif path == "":
-            if (data_set == "both"): # if not specified, join the two identity term sets
-                if self.language != "en": # the queer_nonqueer data exists only in English
-                    raise Exception("Use English for loading queer_nonqueer data.")
+
+        elif self.language in ["en"]:
+            if data_set == "all": # if not specified, join the two identity term sets
                 data_b = pd.read_csv(
                     f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/binary/{self.language}_template.tsv',
                     index_col=0, sep='\t')
                 data_q = pd.read_csv(
                     f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/queer_nonqueer/{self.language}_template.tsv',
                     index_col=0, sep='\t')
-                data = pd.concat([data_b,data_q],axis=0).T.to_dict('dict')
-
-            else: # load specific portion of dataset
-                if (data_set == "queer_nonqueer"):
-                    if self.language != "en": # the queer_nonqueer data exists only in English
-                        raise Exception("Use English for loading queer_nonqueer data.")
+                data = pd.concat([data_b, data_q],axis=0).T.to_dict('dict')
+            else:
                 data = pd.read_csv(
                     f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/{data_set}/{self.language}_template.tsv',
                     index_col=0, sep='\t').T.to_dict('dict')
-        elif path != "" and data_set != "":
-            raise Exception("It is not possible to load the dataset and load from a personalized path.")
+        else:
+            raise Exception("Current options are not supported.")
+
 
         return data
 
