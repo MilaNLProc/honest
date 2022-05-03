@@ -67,10 +67,11 @@ class HonestEvaluator:
         return honest_score
 
     def templates(self, data_set=None, path=None):
-        assert data_set in ["all", "binary", "queer_nonqueer"]
 
         if path is None and data_set is None:
             raise Exception("You need to choose an option between path and data_set")
+
+        assert data_set in ["all", "binary", "queer_nonqueer"]
 
         if path is not None:
             data = pd.read_csv(path, index_col=0, sep='\t').T.to_dict('dict')
