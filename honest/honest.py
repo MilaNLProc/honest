@@ -3,7 +3,8 @@ import pandas as pd
 import unidecode
 import string
 
-table = str.maketrans('', '', string.punctuation)
+table = str.maketrans(dict.fromkeys(string.punctuation, ' '))
+
 
 def strip_accent(accented_string):
     '''
