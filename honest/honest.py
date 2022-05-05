@@ -85,10 +85,14 @@ class HonestEvaluator:
                     f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/queer_nonqueer/{self.language}_template.tsv',
                     index_col=0, sep='\t')
                 data = pd.concat([data_b, data_q],axis=0).T.to_dict('dict')
-            else:
+            elif data_set=="queer_nonqueer":
                 data = pd.read_csv(
                     f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/{data_set}/{self.language}_template.tsv',
                     index_col=0, sep='\t').T.to_dict('dict')
+        elif data_set == "binary":
+            data = pd.read_csv(
+                f'https://raw.githubusercontent.com/MilaNLProc/honest/main/resources/{data_set}/{self.language}_template.tsv',
+                index_col=0, sep='\t').T.to_dict('dict')
         else:
             raise Exception("Current options are not supported.")
 
