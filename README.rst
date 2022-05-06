@@ -54,13 +54,13 @@ Installing
 .. code-block:: bash
 
     pip install -U honest
-    
-    
+
+
 Using
 -----
 
 .. code-block:: python
-    
+
     # Load HONEST templates
     evaluator = honest.HonestEvaluator(lang)
     masked_templates = evaluator.templates(data_set="binary") # or "queer_nonqueer" or "all"
@@ -87,7 +87,7 @@ Please use the following bibtex entries if you use this score in your project:
 
 ::
 
-  @inproceedings{nozza-etal-2021-honest,
+    @inproceedings{nozza-etal-2021-honest,
     title = {"{HONEST}: Measuring Hurtful Sentence Completion in Language Models"},
     author = "Nozza, Debora and Bianchi, Federico  and Hovy, Dirk",
     booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
@@ -98,15 +98,15 @@ Please use the following bibtex entries if you use this score in your project:
     url = "https://aclanthology.org/2021.naacl-main.191",
     doi = "10.18653/v1/2021.naacl-main.191",
     pages = "2398--2406",
-  }
-  
-@inproceedings{nozza-etal-2022-measuring,
-    title = {Measuring Harmful Sentence Completion in Language Models for LGBTQIA+ Individuals},
-    author = "Nozza, Debora and Bianchi, Federico and Lauscher, Anne and Hovy, Dirk",
-    booktitle = "Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion",
-    publisher = "Association for Computational Linguistics",
-    year={2022}
-}
+    }
+
+    @inproceedings{nozza-etal-2022-measuring,
+        title = {Measuring Harmful Sentence Completion in Language Models for LGBTQIA+ Individuals},
+        author = "Nozza, Debora and Bianchi, Federico and Lauscher, Anne and Hovy, Dirk",
+        booktitle = "Proceedings of the Second Workshop on Language Technology for Equality, Diversity and Inclusion",
+        publisher = "Association for Computational Linguistics",
+        year={2022}
+    }
 
 Development Team
 ----------------
