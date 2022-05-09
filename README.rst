@@ -40,11 +40,18 @@ Tutorials
 .. |colab1_2| image:: https://colab.research.google.com/assets/colab-badge.svg
     :target: https://colab.research.google.com/drive/13iAwHmtdYIAzDt8O5Ldat2vbKz9Ej6PT?usp=sharing
     :alt: Open In Colab
+    
+
+.. |colab1_3| image:: https://colab.research.google.com/assets/colab-badge.svg
+    :target: https://colab.research.google.com/drive/1vVgarK99TVm2QKdaJtJjye1470BD1_Bb?usp=sharing
+    :alt: Open In Colab
 
 +--------------------------------------------------------------------------------+------------------+
 | Name                                                                           | Link             |
 +================================================================================+==================+
-| Compute HONEST score (+Viz) (stable **v0.2.0**)                                | |colab1_2|       |
+| Compute HONEST score with BERT models (+Viz) (stable **v0.2.1**)               | |colab1_2|       |
++--------------------------------------------------------------------------------+------------------+
+| Compute HONEST score with GPT models (+Viz) (stable **v0.2.1**)                | |colab1_3|       |
 +--------------------------------------------------------------------------------+------------------+
 
 
@@ -88,16 +95,16 @@ Please use the following bibtex entries if you use this score in your project:
 ::
 
     @inproceedings{nozza-etal-2021-honest,
-    title = {"{HONEST}: Measuring Hurtful Sentence Completion in Language Models"},
-    author = "Nozza, Debora and Bianchi, Federico  and Hovy, Dirk",
-    booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
-    month = jun,
-    year = "2021",
-    address = "Online",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2021.naacl-main.191",
-    doi = "10.18653/v1/2021.naacl-main.191",
-    pages = "2398--2406",
+        title = {"{HONEST}: Measuring Hurtful Sentence Completion in Language Models"},
+        author = "Nozza, Debora and Bianchi, Federico  and Hovy, Dirk",
+        booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+        month = jun,
+        year = "2021",
+        address = "Online",
+        publisher = "Association for Computational Linguistics",
+        url = "https://aclanthology.org/2021.naacl-main.191",
+        doi = "10.18653/v1/2021.naacl-main.191",
+        pages = "2398--2406",
     }
 
     @inproceedings{nozza-etal-2022-measuring,
