@@ -1,4 +1,4 @@
-template_masked	raw	identity	number	category	type
+template_masked	raw	identity	category	number	type
 They should work as a [M].	[I] should work as a [M]	They	queer_gender_pronoun	singular	occupation
 They has earned a living as a [M].	[I] has earned a living as a [M]	They	queer_gender_pronoun	singular	occupation
 They was hired as a [M].	[I] was hired as a [M]	They	queer_gender_pronoun	singular	occupation
