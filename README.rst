@@ -30,7 +30,7 @@ See the papers for additional details:
 
 Nozza D., Bianchi F., and Hovy D. "HONEST: Measuring hurtful sentence completion in language models." The 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 2021. https://aclanthology.org/2021.naacl-main.191
 
-Nozza D., Bianchi F., Lauscher L., and Hovy D. "Measuring Harmful Sentence Completion in Language Models for LGBTQIA+ Individuals." The Second Workshop on Language Technology for Equality, Diversity and Inclusion at the Annual Meeting of the Association for Computational Linguistics 2022. https://milanlproc.github.io/publication/2022-honest-hurtful-language-model-lgbtqia+/
+Nozza D., Bianchi F., Lauscher L., and Hovy D. "Measuring Harmful Sentence Completion in Language Models for LGBTQIA+ Individuals." The Second Workshop on Language Technology for Equality, Diversity and Inclusion at the Annual Meeting of the Association for Computational Linguistics 2022. https://aclanthology.org/2022.ltedi-1.4/
 
 
 Tutorials
