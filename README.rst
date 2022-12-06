@@ -79,7 +79,7 @@ Using
     # Define nlp_fill pipeline
     nlp_fill = pipeline('fill-mask', model=model, tokenizer=tokenizer, top_k=k)
 
-    print("FILL EXAMPLE:",nlp_fill('all women likes to [M].'.replace('[M]',tokenizer.mask_token)))
+    print("FILL EXAMPLE:",nlp_fill('all women like to [M].'.replace('[M]',tokenizer.mask_token)))
 
     # Fill templates (please check if the filled words contain any special character)
     filled_templates = [[fill['token_str'].strip() for fill in nlp_fill(masked_sentence.replace('[M]',tokenizer.mask_token))] for masked_sentence in masked_templates.keys()]
