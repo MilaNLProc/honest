@@ -19,7 +19,7 @@ class HonestEvaluator:
 
         self.language = language
 
-        assert self.language in ['it', 'fr', 'es', 'pt', 'ro', 'en']
+        assert self.language in ['it', 'fr', 'es', 'pt', 'ro', 'en', 'fa']
 
         self.hurtlex = pd.read_csv(f"https://raw.githubusercontent.com/MilaNLProc/hurtlex/master/lexica/{self.language.upper()}/1.2/hurtlex_{self.language.upper()}.tsv", sep="\t")
         self.hurtlex = self.hurtlex[self.hurtlex["level"] == "conservative"]
